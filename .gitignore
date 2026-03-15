@@ -1,0 +1,16 @@
+node_modules/
+.obsidian/
+
+.env
+.env.*
+
+data.json
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+*.log
+*.tmp
+*.bak

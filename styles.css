@@ -1,0 +1,688 @@
+﻿/* Three Library - Logic Atom Engine Styles */
+
+/* Panel Layout */
+.three-library-panel {
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.tl-header {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.tl-title {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+/* Input Section */
+.tl-input-section {
+  margin-bottom: 12px;
+}
+
+.tl-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-family: inherit;
+  font-size: 0.9em;
+  resize: vertical;
+}
+
+.tl-input:focus {
+  border-color: var(--interactive-accent);
+  outline: none;
+}
+
+/* Atom Selector */
+.tl-selector-section {
+  margin-bottom: 12px;
+}
+
+.tl-label {
+  display: block;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.tl-atom-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tl-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 0.82em;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.tl-chip:hover {
+  border-color: var(--interactive-accent);
+  background: var(--background-modifier-hover);
+}
+
+.tl-chip-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.tl-chip-icon {
+  display: flex;
+  align-items: center;
+}
+
+.tl-chip-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tl-chip-label {
+  font-weight: 500;
+}
+
+.tl-chip-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-on-accent);
+  color: var(--interactive-accent);
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tl-order-display {
+  margin-top: 8px;
+  font-size: 0.82em;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Action Buttons */
+.tl-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tl-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.tl-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tl-btn-primary {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.tl-btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.tl-btn-secondary {
+  background: var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.tl-btn-secondary:hover:not(:disabled) {
+  background: var(--background-modifier-hover);
+}
+
+.tl-btn-small {
+  padding: 3px 8px;
+  font-size: 0.8em;
+  background: var(--background-modifier-border);
+  color: var(--text-normal);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tl-btn-small:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* Steps Tracking */
+.tl-steps {
+  margin-bottom: 16px;
+}
+
+.tl-step {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border-left: 3px solid var(--interactive-accent);
+  background: var(--background-secondary);
+}
+
+.tl-step-card {
+  border: 1px solid var(--background-modifier-border);
+  border-left: 3px solid var(--interactive-accent);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.tl-step-card:hover {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 1px var(--interactive-accent);
+  transform: translateY(-1px);
+}
+
+.tl-result-card {
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.tl-result-card:hover {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 1px var(--interactive-accent);
+  transform: translateY(-1px);
+}
+
+.tl-result-card-selected {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 2px var(--interactive-accent);
+}
+
+.tl-step-system {
+  border-left-color: var(--text-muted);
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.tl-step-error {
+  border-left-color: var(--text-error);
+  color: var(--text-error);
+}
+
+.tl-step-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.tl-step-header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tl-step-icon {
+  display: flex;
+  align-items: center;
+  color: var(--interactive-accent);
+}
+
+.tl-step-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tl-step-title {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.tl-step-time {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+.tl-step-summary {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.tl-step-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 0.78em;
+  color: var(--text-faint);
+}
+
+.tl-step-details {
+  margin-top: 6px;
+}
+
+.tl-step-details summary {
+  font-size: 0.82em;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tl-step-output {
+  margin-top: 6px;
+  padding: 8px;
+  background: var(--background-primary);
+  border-radius: 4px;
+  font-size: 0.85em;
+  line-height: 1.5;
+  white-space: normal;
+  user-select: text;
+}
+
+.tl-point-card-list {
+  margin-top: 8px;
+  display: grid;
+  gap: 8px;
+}
+
+.tl-point-card {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-primary);
+  padding: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tl-point-card:hover {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 1px var(--interactive-accent);
+}
+
+.tl-point-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.tl-point-card-title {
+  font-size: 0.83em;
+  font-weight: 600;
+  color: var(--text-normal);
+  flex-grow: 1;
+}
+
+.tl-point-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tl-point-card-body {
+  font-size: 0.84em;
+  line-height: 1.5;
+  color: var(--text-normal);
+  user-select: text;
+}
+
+/* Stats Bar */
+.tl-stats {
+  padding: 6px 12px;
+  font-size: 0.82em;
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+/* Result Display */
+.tl-result-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tl-result-header h4 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.tl-result-content {
+  padding: 12px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  line-height: 1.6;
+  font-size: 0.9em;
+  user-select: text;
+}
+
+/* Memory Sidebar */
+.three-library-sidebar {
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.tl-sidebar-title {
+  margin: 0 0 12px 0;
+}
+
+.tl-search-box {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tl-search-input {
+  flex-grow: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 0.85em;
+}
+
+.tl-sidebar-status {
+  font-size: 0.82em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.tl-sidebar-empty {
+  text-align: center;
+  color: var(--text-faint);
+  padding: 20px;
+}
+
+/* Memory Cards */
+.tl-memory-card {
+  padding: 10px;
+  margin-bottom: 8px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.tl-memory-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.tl-memory-type svg {
+  width: 14px;
+  height: 14px;
+  color: var(--interactive-accent);
+}
+
+.tl-memory-title {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.tl-memory-content {
+  font-size: 0.83em;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.tl-memory-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.78em;
+  color: var(--text-faint);
+}
+
+.tl-tag {
+  padding: 1px 6px;
+  background: var(--background-modifier-border);
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Search Modal */
+.tl-search-modal {
+  padding: 16px;
+}
+
+.tl-modal-results {
+  margin-top: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.tl-modal-status {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 12px;
+}
+
+.tl-modal-item {
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.tl-modal-item:hover {
+  border-color: var(--interactive-accent);
+}
+
+.tl-modal-item-title {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.tl-modal-item-content {
+  font-size: 0.83em;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Delete Buttons */
+.tl-btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.tl-btn-delete svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tl-btn-delete:hover {
+  background: var(--background-modifier-error);
+  color: var(--text-error);
+}
+
+.tl-btn-delete:disabled,
+.tl-btn-delete-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.tl-btn-deleted {
+  color: var(--text-faint);
+  opacity: 0.5;
+}
+
+.tl-btn-delete-step {
+  margin-left: auto;
+}
+
+.tl-btn-delete-card {
+  margin-left: auto;
+}
+
+/* Batch cleanup */
+.tl-cleanup-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--background-modifier-border);
+  text-align: center;
+}
+
+.tl-btn-delete-batch {
+  padding: 6px 16px;
+  border: 1px solid var(--text-error);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-error);
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.tl-btn-delete-batch:hover:not(:disabled) {
+  background: var(--text-error);
+  color: var(--text-on-accent);
+}
+
+.tl-btn-delete-batch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tl-btn-delete-batch.tl-btn-deleted {
+  border-color: var(--text-faint);
+  color: var(--text-faint);
+}
+
+/* Deleted memory card */
+.tl-memory-card-deleted {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
+.tl-deleted-label {
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.85em;
+  padding: 4px;
+}
+
+.tl-error {
+  color: var(--text-error);
+}
+
+/* Workspace */
+.tl-workspace-section {
+  margin-bottom: 12px;
+}
+
+.tl-workspace-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.tl-workspace-select {
+  min-width: 150px;
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 0.82em;
+}
+
+.tl-workspace-hint {
+  margin-top: 8px;
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* Workflow presets */
+.tl-workflow-section {
+  margin-bottom: 12px;
+}
+
+.tl-workflow-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tl-workflow-controls {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tl-workflow-btn {
+  padding: 5px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 999px;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: all 0.15s ease;
+}
+
+.tl-workflow-btn:hover {
+  border-color: var(--interactive-accent);
+  background: var(--background-modifier-hover);
+}
+
+.tl-workflow-btn-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.tl-workflow-btn-default {
+  border-style: dashed;
+}
+
+.tl-workflow-hint {
+  margin-top: 8px;
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: var(--text-muted);
+}

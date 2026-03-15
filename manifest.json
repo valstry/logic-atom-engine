@@ -1,0 +1,10 @@
+﻿{
+  "id": "logic-atom-engine",
+  "name": "逻辑原子引擎",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "逻辑原子引擎：基于 EverMemOS 和记忆检索的结构化思维与学习插件，支持拆解、关联、变换、抽象、评估、迭代等原子流程。",
+  "author": "Valstry",
+  "authorUrl": "https://github.com/Valstry",
+  "isDesktopOnly": false
+}
