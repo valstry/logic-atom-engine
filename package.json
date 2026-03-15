@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-three-library",
+  "name": "logic-atom-engine",
   "version": "1.0.0",
-  "description": "Logic Atom Engine - Structured thinking with EverMemOS memory integration for Obsidian",
+  "description": "逻辑原子引擎 - Structured thinking with EverMemOS memory integration for Obsidian",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",

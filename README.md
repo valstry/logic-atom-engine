@@ -1,166 +1,89 @@
-﻿# Three Library - Logic Atom Engine
+﻿# 逻辑原子引擎 / Logic Atom Engine
 
-An Obsidian plugin that enables **structured thinking** through composable Logic Atoms, deeply integrated with [EverMemOS](https://www.evermemos.com/) cloud memory.
+An Obsidian plugin for structured thinking and learning workflows, integrated with EverMemOS cloud memory.
 
-> Built for **EverMemOS Memory Genesis 2026** - Track 2: Platform Plugins
+一个面向 Obsidian 的结构化思维与学习工作流插件，集成 EverMemOS 云端记忆能力。
 
-## Current Planning (2026-03)
+## Overview / 概述
 
-- Chinese re-layout blueprint: docs/RELAYOUT_PLAN_ZH.md
-- Method mapping protocol (primitive -> atom -> step resolver): src/methods/
+Logic Atoms are composable thinking primitives. The plugin orchestrates retrieval, storage, structured reasoning, and iterative correction around a stable execution flow.
 
-## Core Concept
+逻辑原子是一组可编排的思维原子。插件围绕稳定执行流组织检索、存储、结构化推理与迭代校正。
 
-**Logic Atoms** are deterministic code functions that orchestrate EverMemOS API operations (search/add) to implement structured thinking patterns. Unlike pure LLM prompting, each atom follows a predictable CODE → LLM → CODE flow where:
+## Features / 功能
 
-- **CODE** controls all API calls, data flow, and storage decisions
-- **LLM** only makes judgments within each atom (decomposition, scoring, pattern finding)
-- Every step is **traceable, reproducible, and debuggable**
+- Auto-select or manually arrange atom chains
+- Workspace-based workflow organization
+- EverMemOS memory retrieval and storage
+- Structured execution panel with step cards
+- Current-note and selected-text execution
+- Interface-oriented compression from A to A'
+- A/A' consistency correction and one-step extension
 
-```
-User Input
-  ↓
-AtomSelector (LLM picks 2-4 atoms)
-  ↓
-AtomEngine.executeChain()
-  ├── Atom 1: Decompose  → search × 3-5, store × 1
-  ├── Atom 2: Evaluate   → search × N, store × 1
-  └── Synthesize final output
-```
+- 自动选择或手动编排原子链
+- 基于工作区的工作流组织
+- EverMemOS 记忆检索与写入
+- 带步骤卡片的结构化执行面板
+- 支持当前笔记与选中文本执行
+- 从原文 A 到接口集 A' 的压缩流程
+- A/A' 一致性校正与一步延伸
 
-## The 6 Logic Atoms
-
-| Atom | Purpose | Memory Ops |
-|------|---------|------------|
-| **Decompose** | Break complex problems into sub-questions | 3-5 searches + 1 store |
-| **Associate** | Find cross-domain connections | 3-5 searches + 1-2 stores |
-| **Transform** | View topic from multiple perspectives | 3 searches + 1-3 stores |
-| **Abstract** | Extract high-level patterns | 1-2 searches + 1 store |
-| **Evaluate** | Score and compare options | N searches + 1 store |
-| **Iterate** | Refine through feedback rounds | 3 searches + 3 stores |
-
-A typical execution makes **5-15 memory searches** and **3-6 memory stores**, deeply engaging EverMemOS for context-aware reasoning.
-
-## Deep Memory Integration
-
-Every atom actively reads and writes to EverMemOS:
-
-- **Before thinking**: Search for relevant existing memories
-- **During thinking**: Search for supporting evidence per sub-question/option/perspective
-- **After thinking**: Store structured results back as new memories
-
-This creates a **growing knowledge graph** that improves with use. Past decompositions inform future ones. Evaluations reference historical decisions. Patterns accumulate into reusable principles.
-
-## Features
-
-- **Auto Mode**: LLM automatically selects the best 2-4 atoms for your input
-- **Manual Mode**: Choose and combine atoms yourself
-- **Step Tracking**: Watch each atom execute with live progress
-- **Memory Browser**: Sidebar to explore your EverMemOS memory
-- **Search Modal**: Quick memory search from anywhere
-- **Editor Integration**: Run on selected text or entire notes
-- **Insert Results**: One-click insert atom results into your notes
-
-## Installation
+## Installation / 安装
 
 1. Clone this repo into your Obsidian plugins folder:
+   将仓库克隆到 Obsidian 插件目录：
+
    ```bash
    cd /path/to/vault/.obsidian/plugins/
-   git clone https://github.com/Valstry/obsidian-three-library.git
-   cd obsidian-three-library
+   git clone https://github.com/Valstry/logic-atom-engine.git
+   cd logic-atom-engine
    npm install
    npm run build
    ```
 
-2. Enable the plugin in Obsidian Settings → Community Plugins
+2. Enable the plugin in Obsidian Settings -> Community Plugins.
+   在 Obsidian 设置 -> 社区插件中启用插件。
 
-3. Configure in Settings → Three Library:
-   - **EverMemOS API Key**: Get from [memos-dashboard.openmem.net/apikeys/](https://memos-dashboard.openmem.net/apikeys/)
-   - **OpenRouter API Key**: Get from [openrouter.ai](https://openrouter.ai/)
+3. Configure the required EverMemOS and LLM settings in "逻辑原子引擎设置".
+   在“逻辑原子引擎设置”中配置 EverMemOS 与 LLM 所需参数。
 
-## Usage
+## Commands / 命令
 
-### Quick Start
+- `打开逻辑原子面板`
+- `打开记忆侧边栏`
+- `搜索记忆`
+- `对选中文本执行逻辑原子流程`
+- `对当前笔记执行逻辑原子流程`
+- `将选中文本存入记忆`
 
-1. Click the brain icon in the ribbon, or use command palette: "Open Logic Atom Engine panel"
-2. Type or paste a question
-3. Click **"Auto Select & Run"** — the engine will:
-   - Select the best atoms for your input
-   - Execute each atom sequentially
-   - Show live progress with memory stats
-   - Synthesize a final answer
+## Project Structure / 项目结构
 
-### Commands
-
-| Command | Description |
-|---------|-------------|
-| `Open Logic Atom Engine panel` | Main thinking panel |
-| `Open Memory Browser sidebar` | Browse and search memories |
-| `Search memories` | Quick search modal |
-| `Run on selected text` | Analyze selected text |
-| `Run on current note` | Analyze the current note |
-| `Store selected text to memory` | Save selection to EverMemOS |
-
-### Example Scenarios
-
-**Learning Path Planning**
-> "How should I learn machine learning in 2026?"
-> → Atoms: Decompose → Evaluate
-> → Breaks into sub-topics, evaluates resources, stores learning plan
-
-**Technical Decision Making**
-> "Compare React, Vue, and Svelte for a new dashboard project"
-> → Atoms: Decompose → Evaluate → Abstract
-> → Decomposes criteria, evaluates each framework, extracts decision patterns
-
-**Work Pattern Analysis**
-> "What patterns exist in my work this month?"
-> → Atoms: Associate → Abstract → Iterate
-> → Finds connections, extracts patterns, refines insights
-
-## Architecture
-
-```
+```text
 src/
-├── main.ts              # Plugin entry point
-├── settings.ts          # Settings UI
-├── api/
-│   ├── types.ts         # EverMemOS API types
-│   └── client.ts        # API client (search + store)
-├── atoms/
-│   ├── types.ts         # AtomContext, AtomStepResult, LogicAtom
-│   ├── engine.ts        # AtomEngine - chain execution
-│   ├── selector.ts      # LLM-based atom auto-selection
-│   ├── decompose.ts     # Decompose atom
-│   ├── associate.ts     # Associate atom
-│   ├── transform.ts     # Transform atom
-│   ├── abstract.ts      # Abstract atom
-│   ├── evaluate.ts      # Evaluate atom
-│   └── iterate.ts       # Iterate atom
-├── views/
-│   ├── atom-panel.ts    # Main execution panel
-│   ├── memory-sidebar.ts # Memory browser
-│   └── search-modal.ts  # Quick search
-└── utils/
-    └── llm-client.ts    # OpenRouter LLM client
+  api/           EverMemOS API client and types
+  atoms/         Decompose / Associate / Transform / Abstract / Evaluate / Iterate
+  methods/       Method compiler and step resolver
+  utils/         LLM client, interface graph, search-query helpers
+  views/         Atom panel, memory sidebar, search modal
 ```
 
-## API Integration
+```text
+src/
+  api/           EverMemOS API 客户端与类型
+  atoms/         拆解 / 关联 / 变换 / 抽象 / 评估 / 迭代
+  methods/       方法编译器与步骤解析器
+  utils/         LLM 客户端、接口图、检索词辅助工具
+  views/         原子面板、记忆侧边栏、搜索弹窗
+```
 
-Uses EverMemOS Cloud API (`memos.memtensor.cn/api/openmem/v1`):
+## Notes / 说明
 
-| Endpoint | Usage |
-|----------|-------|
-| `POST /search/memory` | Memory retrieval (5-15 calls per execution) |
-| `POST /add/message` | Memory storage (3-6 calls per execution) |
+- The technical plugin id remains `logic-atom-engine` for compatibility with existing Obsidian data directories.
+- Public repository content does not include runtime `data.json` or local vault configuration.
 
-Authentication: `Token {API_KEY}` header
+- 技术插件 id 保持为 `logic-atom-engine`，以兼容现有 Obsidian 数据目录。
+- 公开仓库不包含运行时 `data.json` 或本地 vault 配置。
 
-## License
+## License / 许可证
 
 MIT
-
----
-
-**三库架构 - 逻辑原子引擎** | Built with EverMemOS Cloud API
-
